@@ -37,7 +37,7 @@ public:
 };
 
 /**
- * one pass
+ * one pass, Space Complexity=O(N)
  */
 class Solution2 {
 public:
@@ -59,6 +59,31 @@ public:
         }
     }
 };
+
+/**
+ * one pass, Space Complexity = O(1)
+ */
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode* p = head;
+        ListNode* pp = head;
+        for(int i=n; i>0; i--){
+            pp=pp->next;
+        }
+        if(pp == NULL)
+            return head->next;
+            
+        while(pp->next!=NULL){
+            p = p->next;
+            pp = pp->next; 
+        }
+        p->next = p->next->next;
+        return head;
+    }
+};
+
+
 int main(int argv, char *argv[]){
     
     return 0;
