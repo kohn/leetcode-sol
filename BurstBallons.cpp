@@ -21,7 +21,7 @@ public:
 	    if(this_run > max)
 		max = this_run;
 	}
-	cout << lo << ", " << hi << ": " << max << endl;
+	// cout << lo << ", " << hi << ": " << max << endl;
 	A[lo][hi] = max;
     }
 
