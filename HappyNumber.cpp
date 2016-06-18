@@ -13,7 +13,6 @@ public:
 		new_number += (n%10)*(n%10);
 		n /= 10;
 	    }
-	    cout << new_number << endl;
 	    if(new_number == 1)
 		return true;
 
