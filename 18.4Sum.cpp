@@ -19,6 +19,15 @@ void print(vector<vector<int>> &v){
     }
 }
 
+/**
+ * 主要思想是先排序, 然后递归的求k-sum
+ * 要注意的是去重, 其实就是在循环的时候检查是否和上一个数字相同, 相同的话就跳过,
+ * 因为i处能从后面找到k个数和为target的话, i-1处肯定已经找到过了.
+ *
+ * 另外一个要注意的问题是剪枝, 否则会超时. 可以计算i开始连续k个数,
+ * 如果大于target就不必继续下去了, 后面的组合肯定大于target. 还要计算i与倒数的k-1个数之和,
+ * 如果小于target说明i处太小了, 不用计算, 可以直接计算i+1.
+ */
 class Solution {
 public:
     vector<vector<int>> NSum(vector<int>& nums, int target, int n, int start){
