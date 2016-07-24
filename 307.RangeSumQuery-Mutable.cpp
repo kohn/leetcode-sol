@@ -6,6 +6,7 @@
 #include <algorithm>
 using namespace std;
 
+
 void print(vector<int> &v){
     for(auto i:v){
         cout << i << " ";
@@ -19,6 +20,10 @@ void print(vector<vector<int>> &v){
     }
 }
 
+/**
+ * 用到了Fenwick Tree.
+ * 见https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/
+ */
 class NumArray {
 public:
     vector<int> tree;
