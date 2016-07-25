@@ -19,6 +19,9 @@ void print(vector<vector<int>> &v){
     }
 }
 
+/**
+ * 思路就是每次循环将边数只有1的结点剔除, 直到最后剩下的结点数为1或者2, 剩下的结点就是可以为根节点的节点.
+ */
 class Solution {
 public:
     vector<int> findMinHeightTrees(int n, vector<pair<int, int>>& edges) {
@@ -38,8 +41,8 @@ public:
         for(int i=0; i<n; i++)
             edge_count.push_back(edge_matrix[i].size());
 
-        print(nodes);
-        print(edge_count);
+        // print(nodes);
+        // print(edge_count);
             
         while(nodes.size()>2){
             vector<int> pop;
@@ -51,13 +54,13 @@ public:
                 } else
                     iter++;
             }
-            print(pop);
+            // print(pop);
             for(int i=0; i<pop.size(); i++){
                 for(int j=0; j<edge_matrix[pop[i]].size(); j++){
                     edge_count[edge_matrix[pop[i]][j]]--;
                 }
             }
-            print(edge_count);
+            // print(edge_count);
         }
         return nodes;
     }
