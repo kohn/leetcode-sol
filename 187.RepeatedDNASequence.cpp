@@ -39,7 +39,7 @@ public:
         int code = toInt(s, 0);
         b[code] = true;
         for(int j=10; j<s.size(); j++){
-            code = (((code << 2)+(s[j]-'A'+1)%5) & (0x000FFFFF));
+            code = (((code << 2)+(s[j]-'A'+1)%5) & (0x000FFFFF)); // 不用code=toInt()每次都计算十个字符, 用这种方式只要计算一个字符就行.
             if(b[code]){
                 if(!saved[code]){
                     ret.push_back(s.substr(j-9, 10));
