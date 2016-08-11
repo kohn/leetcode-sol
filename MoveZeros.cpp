@@ -1,4 +1,23 @@
 class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int put_pos = 0;
+        int size = nums.size();
+        for(int i=0; i<size; i++){
+            if(nums[i] != 0){
+                if(put_pos != i){
+                    nums[put_pos] = nums[i];
+                }
+                put_pos++;
+            }
+        }
+        while(put_pos<size){
+            nums[put_pos++] = 0;
+        }
+    }
+};
+
+class Solution {
     
 public:
     void swap(vector<int>& nums, int i, int j){
